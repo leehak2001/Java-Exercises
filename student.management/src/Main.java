@@ -15,14 +15,14 @@ public class Main {
         students.add(s3);
 
         SchoolClass class1 = new SchoolClass(students, 1, t1);
-        class1.printall();
-        class1.removeStudent(s1);
-        class1.printall();
+        class1.printAll();
+        class1.removeStudent(12345678);
+        class1.printAll();
         class1.addStudent(s1);
-        class1.printall();
-        class1.updateGrade(s1, 100);
+        class1.printAll();
+        class1.updateGrade(12345678, 100);
         class1.addStudent(s4);
-        class1.printall();
+        class1.printAll();
 
     }
 }

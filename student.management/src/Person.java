@@ -1,6 +1,6 @@
 public class Person {
-    String name;
-    int id;
+    private String name;
+    private int id;
 
     public Person(String name, int id){
         this.setName(name);

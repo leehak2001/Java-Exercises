@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 public class SchoolClass implements Classroom{
@@ -7,14 +8,14 @@ public class SchoolClass implements Classroom{
     int grade;
     Teacher teacher;
 
-    public SchoolClass(ArrayList<Student> students, int grade, Teacher teacher){
+    public SchoolClass(Collection<Student> students, int grade, Teacher teacher){
         this.setStudents(students);
         this.grade = grade;
         this.teacher = teacher;
     }
 
 
-    public void setStudents(ArrayList<Student> students){
+    public void setStudents(Collection<Student> students ){
         this.students = new HashMap<>();
 
          for (Student s : students){
@@ -36,10 +37,10 @@ public class SchoolClass implements Classroom{
     }
 
     @Override
-    public void printall() {
+    public void printAll() {
 
         for(Student s : this.getStudents().values()){
-            s.print();
+            System.out.println(s);
         }
     }
 
@@ -50,11 +51,16 @@ public class SchoolClass implements Classroom{
         }
     }
     @Override
-    public void removeStudent(Student student){
-        this.getStudents().remove(student.getId());
+    public void removeStudent(int studentId){
+        this.getStudents().remove(studentId);
     }
      @Override
-    public void updateGrade(Student student, int grade){
-        this.getStudents().get(student.getId()).setGrade(grade);
+    public void updateGrade(int studentId, int grade){
+        if( this.students.containsKey(studentId)){
+            this.getStudents().get(studentId).setGrade(grade);
+        }
+        else{
+            System.out.println("Student not found");
+        }
      }
 }

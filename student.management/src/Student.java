@@ -1,5 +1,5 @@
 public class Student extends Person{
-    int grade;
+    private int grade;
 
     public Student(String name, int id, int grade){
         super(name, id);
@@ -20,7 +20,8 @@ public class Student extends Person{
         return this.grade;
     }
 
-    public void print(){
-        System.out.println("name: " + this.getName() + " id: " + this.getId() + " grade: " + this.getGrade());
+    @Override
+    public String toString() {
+        return "name: " + this.getName() + " id: " + this.getId() + " grade: " + this.grade;
     }
 }
