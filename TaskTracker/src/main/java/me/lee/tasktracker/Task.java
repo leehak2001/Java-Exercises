@@ -10,11 +10,10 @@ public class Task {
     Status status= Status.TODO;
     String createdAt;
     String updatedAt="";
-    private static int counter =0;
 
     //constractor
-    public Task(String description){
-        this.setId();
+    public Task(int id, String description){
+        this.setId(id);
         this.setDescription(description);
         this.setCreatedAt();
     }
@@ -32,9 +31,8 @@ public class Task {
         this.updatedAt = date.format(formatter);
     }
 
-    private void setId() {
-        this.id= counter;
-        counter++;
+    private void setId(int id) {
+        this.id= id;
     }
 
     public void setStatus(Status status) {
